@@ -203,10 +203,10 @@ import streamlit as st
 def load_models():
 
     files = {
-        "heart": ("heart.pkl", "PASTE_ID_1"),
-        "diabetes": ("diabetes.pkl", "PASTE_ID_2"),
-        "obesity": ("obesity.pkl", "PASTE_ID_3"),
-        "hypertension": ("hypertension.pkl", "PASTE_ID_4"),
+        "heart": ("heart.pkl", "16V_bk9eFzXCqBtOeIlK55vZISxyZ7BR2"),
+        "diabetes": ("diabetes.pkl", "1I9f6ACGRy2FTFJe38LpZbIQn2J2nsOTh"),
+        "obesity": ("obesity.pkl", "1LuaEQgttlDnV-kK7X5ujEwRqC0c9jsV5"),
+        "hypertension": ("hypertension.pkl", "1Ub29aUOQNI4ZQQWeKsZSdTQBQ9wmqoum"),
     }
 
     models = {}
@@ -216,7 +216,7 @@ def load_models():
         if not os.path.exists(filename):
             file_id = "1AbCDeFgHiJK12345LmNoPq"
             url = f"https://drive.google.com/uc?id={file_id}"
-            gdown.download(url, filename, quiet=False, fuzzy=True)
+            gdown.download(url, filename, quiet=False)
 
         models[key] = joblib.load(filename)
 
