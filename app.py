@@ -214,7 +214,8 @@ def load_models():
     for key, (filename, file_id) in files.items():
 
         if not os.path.exists(filename):
-            url = f"https://drive.google.com/drive/folders/1MVmcOG-MABWrYZeP5g4lmINiHEg2bLH3?usp=drive_link"
+            file_id = "1AbCDeFgHiJK12345LmNoPq"
+            url = f"https://drive.google.com/uc?id={file_id}"
             gdown.download(url, filename, quiet=False, fuzzy=True)
 
         models[key] = joblib.load(filename)
